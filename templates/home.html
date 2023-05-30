@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HOMEPAGE</title>
+</head>
+
+<body>
+	<h1>Students ADD</h1>
+	<form action="">
+		Name: <input type="text" name="student"><br><br>
+		Father: <input type="text" name="father"><br><br>
+		Phone: <input type="text" name="phone"><br><br>
+		<button>ADD Student</button>
+	</form>
+
+	<h1>Students List</h1>
+	<table>
+		<tr>
+			<th>Student Name</th>
+			<th>Father Name</th>
+			<th>Phone</th>
+		</tr>
+		{% for stu in students %}
+		<tr>
+
+			<td>{{stu.0}}</td>
+			<td>{{stu.1}}</td>
+			<td>{{stu.2}}</td>
+
+			<td>
+				<form action="">
+					<input type="hidden" name="dstudent" value="{{stu.0}}">
+
+					<input type="submit" name="delete" value="delete">
+				</form>
+			</td>
+
+		</tr>
+		{% endfor %}
+	</table>
+
+	<style>
+		table,
+		td,
+		th {
+			border: 2px solid black;
+			border-collapse: collapse;
+		}
+
+		td,
+		th {
+			padding: 10px;
+		}
+	</style>
+	<br><br><br><br><br>
+	<br><br><br><br><br>
+	<br><br><br><br><br>
+</body>
+</html>
